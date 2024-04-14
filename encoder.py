@@ -7,6 +7,18 @@ def encode(password1):
         tempstr+=str(temp)
     return tempstr
 
+def decode(n):
+    x = []
+    for i in str(n):
+        x.append(int(i))
+    for y in range(len(x)):
+        x[y] = x[y] - 3
+        if x[y] <= 0:
+            x[y] = str(10 + x[y])
+        else:
+            x[y] = str(x[y])
+    return "".join(x)
+
 def main():
     password = ""
     store1 = ""
@@ -24,7 +36,7 @@ def main():
 
         elif choice == "2":
            store2 = decode(store1)
-            print("The encoded password is ", store1, ", and the original password is ", store2, sep = "")
+           print("The encoded password is ", store1, ", and the original password is ", store2, sep = "")
 
         elif choice == "3":
             break
